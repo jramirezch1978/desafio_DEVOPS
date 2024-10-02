@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+    stages {
+        stage('Deploy Jenkins to Kubernetes') {
+            steps {
+                script {
+                    sh 'kubectl apply -f jenkins-deployment.yaml'
+                }
+            }
+        }
+    }
+}
